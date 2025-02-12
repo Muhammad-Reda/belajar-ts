@@ -1,0 +1,126 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+#app {
+    /* border: 1px solid purple; */
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+    a:hover {
+        color: #747bff;
+    }
+    button {
+        background-color: #f9f9f9;
+    }
+}
+
+.todo-container {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+}
+
+.task-container {
+    border-bottom: 1px solid rgb(61, 59, 59);
+    display: flex;
+    flex-wrap: nowrap;
+    text-wrap: inherit;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    max-width: 640px;
+}
+
+.task-text-container {
+    max-width: 20rem;
+    overflow-wrap: break-word;
+    /* Add min-width to maintain consistency */
+    min-width: 20rem;
+}
+
+.action-container {
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    width: 3rem;
+    padding: 0.4rem;
+    border-radius: 0.2rem;
+    border: none;
+    background-color: rgb(44, 159, 169);
+    color: rgb(0, 0, 0);
+}
+
+button:hover {
+    background-color: rgb(35, 74, 81);
+    cursor: pointer;
+}
+
+.button-delete {
+    background-color: rgb(178, 24, 24);
+}
+
+.button-delete:hover {
+    background-color: rgb(101, 14, 14);
+}
+
+.input-container button:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    padding-left: 1rem;
+    border-bottom: 1px solid rgb(61, 59, 59);
+    padding: 1rem;
+}
+
+.input-container button {
+    width: 5rem;
+    background-color: rgb(16, 210, 16);
+}
+
+input {
+    /* Change width to match task-text-container */
+    width: 20rem;
+    background-color: #242424;
+    border-bottom: 1px solid rgb(133, 130, 130);
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    padding: 0.4rem;
+    border-radius: 0.2rem;
+}
