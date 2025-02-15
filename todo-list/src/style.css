@@ -15,8 +15,8 @@
 
 body {
     margin: 0;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     min-width: 320px;
     min-height: 100vh;
 }
@@ -42,6 +42,33 @@ body {
     }
 }
 
+@media only screen and (max-width: 780px) {
+    .todo-container {
+        max-width: 500px;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .task-text-container {
+        max-width: 250px;
+        font-size: 12px;
+    }
+
+    .task-text-container > p {
+        max-width: 250px;
+    }
+    .input-edit {
+        border: 1px solid rgb(61, 59, 59);
+        font-size: 12px;
+        text-align: inherit;
+        max-width: 100px;
+        line-height: inherit;
+        height: inherit;
+        overflow-wrap: break-word;
+    }
+}
+
 .todo-container {
     /* border: 1px solid red; */
     display: flex;
@@ -64,7 +91,7 @@ body {
     max-width: 20rem;
     overflow-wrap: break-word;
     /* Add min-width to maintain consistency */
-    min-width: 20rem;
+    min-width: 100px;
 }
 
 .action-container {

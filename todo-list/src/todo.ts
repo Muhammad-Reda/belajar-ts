@@ -10,7 +10,7 @@ function organizeTask(taskS: Task[]) {
 export function setupTasks(element: HTMLDivElement) {
     const organizedTask = organizeTask(tasks);
 
-    organizedTask.map((task) => {
+    organizedTask.map((task, i) => {
         const taskContainer: HTMLDivElement = document.createElement("div");
         taskContainer.className = "task-container";
         const taskId: HTMLParagraphElement = document.createElement("p");
@@ -40,9 +40,10 @@ export function setupTasks(element: HTMLDivElement) {
         const taskText = document.createElement("p");
         taskText.textContent = task.text;
 
+        taskContainer.appendChild(taskId).textContent = (i + 1).toString();
         taskContainer.appendChild(taskTextContainer);
         taskTextContainer.appendChild(taskText);
-        taskContainer.appendChild(taskId).textContent = task.id.toString();
+
         taskContainer.appendChild(checkbox).checked = task.completed;
         taskContainer.appendChild(actionContainer);
         actionContainer.appendChild(editButton);
@@ -66,9 +67,10 @@ export function setupTasks(element: HTMLDivElement) {
                 editButton.textContent = "Save";
                 deleteButton.disabled;
                 checkbox.disabled;
-                const inputEdit = document.createElement("input");
+                const inputEdit = document.createElement("textarea");
                 inputEdit.value = task.text;
                 inputEdit.placeholder = "Edit task";
+                inputEdit.className = "input-edit";
                 editButton.style.backgroundColor = "rgb(16, 210, 16)";
 
                 taskTextContainer.replaceChild(inputEdit, taskText);
@@ -80,7 +82,8 @@ export function setupTasks(element: HTMLDivElement) {
                 // Switch back to display mode
                 editButton.textContent = "Edit";
                 taskText.textContent = task.text;
-                const currentInput = taskTextContainer.querySelector("input");
+                const currentInput =
+                    taskTextContainer.querySelector("textarea");
                 editButton.style.backgroundColor = "rgb(44, 159, 169)";
                 if (currentInput) {
                     taskTextContainer.replaceChild(taskText, currentInput);
@@ -151,6 +154,6 @@ export function addTask(
 
             setupTasks(element);
         }
-        input.focus();
+        text.length <= 0 ? input.focus() : "";
     });
 }

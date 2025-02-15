@@ -1,0 +1,118 @@
+/* :root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+} */
+
+body {
+    margin: 0;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #8a8b87;
+    }
+    a:hover {
+        color: #747bff;
+    }
+    button {
+        background-color: #f9f9f9;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    img {
+        width: 300px;
+        height: 400px;
+        max-width: none;
+        -webkit-box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 1);
+        -moz-box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 1);
+    }
+
+    .name {
+        bottom: 5rem;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    img {
+        width: 350px;
+        height: 500px;
+        max-width: none;
+        -webkit-box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 1);
+        -moz-box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 1);
+    }
+    .name {
+        bottom: 10rem;
+    }
+}
+
+.background-image {
+    position: absolute;
+    height: auto;
+    width: auto;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5rem);
+    z-index: -1;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#app {
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+#root {
+    /* min-height: 100%; */
+    /* max-height: 100%; */
+    /* max-width: none; */
+    padding: 1rem;
+    /* top: 1rem; */
+}
+
+.next-button {
+    position: relative;
+    bottom: 0;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: 300ms;
+    border-bottom: 1px solid gray;
+}
+
+.next-button:hover {
+    border-bottom: 1px solid white;
+}
+
+.name {
+    /* bottom: 10rem; */
+    font-family: "Comic Neue", "Lucida Sans Unicode", Geneva, Verdana,
+        sans-serif;
+    position: absolute;
+    z-index: 2;
+    font-size: 2rem;
+    color: black;
+    border-top: 3px solid white;
+    padding: 5px;
+}
